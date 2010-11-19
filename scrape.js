@@ -16,16 +16,24 @@ Lazy(s).lines.map(String)
     .join(function (records) {
         var data = { records : [], keysyms : {}, unicodes : {}, names : {} };
         records.forEach(function (rec) {
-            var i = data.records.length;
-            data.records.push(rec);
-            
-            if (!data.unicodes[rec.unicode]) data.unicodes[rec.unicode] = [];
-            data.unicodes[rec.unicode].push(i);
-            
-            if (!data.names[rec.name]) data.names[rec.name] = [];
-            data.names[rec.name].push(i);
-            
-            data.keysyms[rec.keysym] = i;
+            if (data.keysyms[rec.keysym]) {
+                var i = data.keysyms[rec.keysym];
+                data.records[i].names.push(rec.name);
+                data.names[rec.name] = i;
+            }
+            else {
+                var i = data.records.length;
+                
+                if (!data.unicodes[rec.unicode]) data.unicodes[rec.unicode] = [];
+                data.unicodes[rec.unicode].push(i);
+                
+                data.names[rec.name] = i;
+                data.keysyms[rec.keysym] = i;
+                
+                rec.names = [ rec.name ];
+                delete rec.name;
+                data.records.push(rec);
+            }
         });
         fs.createWriteStream(__dirname + '/data/keysyms.json')
             .write(JSON.stringify(data));
