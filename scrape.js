@@ -22,8 +22,10 @@ Lazy(s).lines.map(String)
             if (!data.unicodes[rec.unicode]) data.unicodes[rec.unicode] = [];
             data.unicodes[rec.unicode].push(i);
             
+            if (!data.names[rec.name]) data.names[rec.name] = [];
+            data.names[rec.name].push(i);
+            
             data.keysyms[rec.keysym] = i;
-            data.names[rec.name] = i;
         });
         fs.createWriteStream(__dirname + '/data/keysyms.json')
             .write(JSON.stringify(data));
