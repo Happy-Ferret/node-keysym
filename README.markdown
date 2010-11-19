@@ -34,7 +34,7 @@ Output:
     [ { keysym: 65288
       , unicode: 8
       , status: 'f'
-      , name: 'BackSpace'
+      , names: [ 'BackSpace' ]
       }
     ]
 
