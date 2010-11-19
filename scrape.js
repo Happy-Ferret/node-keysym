@@ -4,7 +4,7 @@ var Hash = require('traverse/hash');
 var fs = require('fs');
 
 var s = fs.createReadStream(__dirname + '/data/keysyms.txt');
-var re = /^0x([\da-f]+)\s+U([\da-f]+)\s+(\S+)\s+# (.+)/;
+var re = /^0x([\da-f]+)\s+U([\da-f]+)\s+(\S+)\s+# (\S+)/;
 Lazy(s).lines.map(String)
     .filter(function (line) { return line.match(re) })
     .map(function (line) {
