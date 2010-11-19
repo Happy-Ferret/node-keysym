@@ -19,8 +19,10 @@ Lazy(s).lines.map(String)
             var i = data.records.length;
             data.records.push(rec);
             
+            if (!data.unicodes[rec.unicode]) data.unicodes[rec.unicode] = [];
+            data.unicodes[rec.unicode].push(i);
+            
             data.keysyms[rec.keysym] = i;
-            data.unicodes[rec.unicode] = i;
             data.names[rec.name] = i;
         });
         fs.createWriteStream(__dirname + '/data/keysyms.json')

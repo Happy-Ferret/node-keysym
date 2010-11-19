@@ -9,7 +9,9 @@ exports.fromKeysym = function (keysym) {
 };
 
 exports.fromUnicode = function (code) {
-    return data.records[data.unicodes[code]]
+    return data.unicodes[code].map(function (i) {
+        return data.records[i]
+    });
 };
 
 exports.fromName = function (name) {

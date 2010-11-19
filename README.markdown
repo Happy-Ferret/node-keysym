@@ -25,17 +25,18 @@ except keysym and unicode are converted from hexadecimal strings to integers.
 Example
 =======
 
-Look up a keysym record from its unicode position
--------------------------------------------------
+Look up keysym records from a unicode position
+----------------------------------------------
     var ks = require('keysym');
     console.dir(ks.fromUnicode(8))
 
 Output:
-    { keysym: 65288
-    , unicode: 8
-    , status: 'f'
-    , name: 'BackSpace'
-    }
+    [ { keysym: 65288
+      , unicode: 8
+      , status: 'f'
+      , name: 'BackSpace'
+      }
+    ]
 
 Installation
 ============
