@@ -9,9 +9,8 @@
         "type": "git",
         "url": "http://github.com/substack/node-keysym.git"
     }, 
-    "dependencies" : {
+    "devDependencies" : {
         "hashish" : "0.0.2"
     },
     "engines": { "node" : ">=0.4.0" }
 }
-
