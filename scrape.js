@@ -1,6 +1,6 @@
 // Scraper for http://www.cl.cam.ac.uk/~mgk25/ucs/keysyms.txt
 var Lazy = require('lazy');
-var Hash = require('traverse/hash');
+var Hash = require('hashish');
 var fs = require('fs');
 
 var s = fs.createReadStream(__dirname + '/data/keysyms.txt');

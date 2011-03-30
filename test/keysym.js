@@ -1,5 +1,5 @@
 var ks = require('keysym');
-var Hash = require('traverse/hash');
+var Hash = require('hashish');
 
 exports.symmetric = function (assert) {
     assert.ok(ks.records.length > 50); // at least

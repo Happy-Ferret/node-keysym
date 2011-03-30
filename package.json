@@ -1,14 +1,17 @@
 {
     "name" : "keysym",
-    "version" : "0.0.2",
+    "version" : "0.0.3",
     "description" : "Look up X11 keysyms, unicode positions, and names.",
     "main" : "./index.js",
-    "keywords": [ "x11 keysym unicode" ],
-    "license": { "type": "Public Domain" }, 
+    "keywords": [ "x11", "keysym", "key", "unicode" ],
+    "license": "MIT/X11",
     "repository": {
         "type": "git",
         "url": "http://github.com/substack/node-keysym.git"
     }, 
-    "engines": { "node": ">=0.2.0" }
+    "dependencies" : {
+        "hashish" : "0.0.2"
+    },
+    "engines": { "node" : ">=0.4.0" }
 }
 
