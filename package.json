@@ -1,6 +1,6 @@
 {
     "name" : "keysym",
-    "version" : "0.0.3",
+    "version" : "0.0.4",
     "description" : "Look up X11 keysyms, unicode positions, and names.",
     "main" : "./index.js",
     "keywords": [ "x11", "keysym", "key", "unicode" ],

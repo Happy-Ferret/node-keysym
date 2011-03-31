@@ -39,10 +39,7 @@ function lookup (e) {
 }
 
 exports.keyEvent = function (code, shiftMask) {
-    if (a <= code && code <= z) {
-        return code - (shiftMask ? a - A : 0);
-    }
-    else if (A <= code && code <= Z) {
+    if (A <= code && code <= Z) {
         return code + (shiftMask ? 0 : a - A);
     }
     else if (events.both[code]) {
