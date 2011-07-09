@@ -1,7 +1,8 @@
+var assert = require('assert');
 var ks = require('keysym');
 var Hash = require('hashish');
 
-exports.symmetric = function (assert) {
+exports.symmetric = function () {
     assert.ok(ks.records.length > 50); // at least
     ks.records.forEach(function (rec) {
         var k = ks.fromKeysym(rec.keysym);
@@ -20,7 +21,7 @@ exports.symmetric = function (assert) {
 
 var Lazy = require('lazy');
 var fs = require('fs');
-exports.fromFile = function (assert) {
+exports.fromFile = function () {
     var s = fs.createReadStream(__dirname + '/../data/keysyms.txt');
     Lazy(s).lines.map(String)
         .filter(function (line) { return line.match(/^0x/) })
